@@ -1,0 +1,37 @@
+
+<div class="forms">
+<form action="/contributor_save"> 
+    <h2>Adding a contributor</h2>
+  <label for="name">contributor's name</label>
+  <input type="text" name="name"></br></br>
+
+  <input type="submit">
+</form>
+
+<form action="/contributor_delete">
+  <h2>deleting a contributor </h2>
+  
+  <label for="id">please enter <b>one</b> id number of the contributor you'd like to delete. </label> 
+  <input type="text" placeholder="1" name="id">
+  <input type="submit">
+</form>
+
+
+<form action="/contributor_edit">
+  <h2>Editing a contributor</h2>
+  
+  <label for="id">please enter <b>one</b> id number of the contributor you'd like to edit. </label> 
+  <input type="text" placeholder="1" name="id"></br></br>
+  
+  <label for="catigory">updated contributor name</label>
+  <input type="text" name="catigory"></br></br>
+
+  <input type="submit">
+</form>
+</div>
+
+<div class="list">
+    <h2>Current contributors</h2>
+<!--loop through stuff -->
+</div>
+

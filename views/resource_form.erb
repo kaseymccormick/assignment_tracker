@@ -1,14 +1,18 @@
 
 <div class="forms">
 <form action="/rt_save"> 
-    <h2>Adding a resource catigory</h2>
-  <label for="catigory">resource catigory</label>
+    <h2>Adding a resource</h2>
+  <label for="catigory">resource link</label>
   <input type="text" name="catigory"></br></br>
+  <label for="catigory">resource catigory id</label>
+  <input type="Number" name="catigory"></br></br>
+  <label for="catigory">assignment id</label>
+  <input type="Number" name="catigory"></br></br>
   <input type="submit">
 </form>
 
 <form action="/rt_delete">
-  <h2>deleting resource catigory </h2>
+  <h2>deleting resource </h2>
   
   <label for="id">please enter <b>one</b> id number of the resource catigory you'd like to delete. </label> 
   <input type="text" placeholder="1" name="id">
@@ -17,7 +21,7 @@
 
 
 <form action="/rt_edit">
-  <h2>Editing a resource catigory</h2>
+  <h2>Editing a resource</h2>
   
   <label for="id">please enter <b>one</b> id number of the resource catigory you'd like to edit. </label> 
   <input type="text" placeholder="1" name="id"></br></br>
@@ -30,7 +34,7 @@
 </div>
 
 <div class="list">
-    <h2>Current resource types </h2>
+    <h2>Current resources</h2>
 <!--loop through stuff -->
 </div>
 
