@@ -1,6 +1,6 @@
 <body>
-
-<form action="/assignment/save"> 
+<div class="forms">
+<form action="/assignment_save"> 
     <h2>Adding an Assignment</h2>
   <label for="description">Assignment description</label> 
   <input type="text" name="description"></br></br>
@@ -9,5 +9,35 @@
   <input type="text" name="git_repo"></br></br>
   <input type="submit">
 </form>
+
+<form action="/assignment_delete">
+  <h2>deleting assignment </h2>
+  
+  <label for="id">please enter <b>one</b> id number of the assignment you'd like to delete. </label> 
+  <input type="text" placeholder="1" name="id">
+  <input type="submit">
+</form>
+
+
+<form action="/assignment_edit">
+  <h2>Editing an assignment </h2>
+  
+  <label for="id">please enter <b>one</b> id number of the assignment you'd like to edit. </label> 
+  <input type="text" placeholder="1" name="id"></br></br>
+  
+  <label for="description">Assignment description</label> 
+  <input type="text" name="description"></br></br>
+
+  <label for="git_repo">the github repository link</label> 
+  <input type="text" name="git_repo"></br></br>
+
+  <input type="submit">
+</form>
+</div>
+
+<div class="list">
+    <h2>Current assignments </h2>
+<!--loop through stuff -->
+</div>
 
 </body>

@@ -13,9 +13,17 @@ get"/assignments/:option" do
   erb :"assignment_form"
 end
 
-get "/assignment/save" do
+get "/assignment_save" do
   #send params to database, insert new row
   #move to next step?
+end
+get "/assignment_delete" do
+  #send params to database, insert new row
+  #move to next step?
+end
+
+get "/assignment_edit" do
+  #send params to database update row
 end
 
 get "/resources/:option" do

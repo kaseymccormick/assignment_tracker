@@ -1,14 +1,36 @@
-    
+
+<div class="forms">
 <form action="/rt_save"> 
-  <h2>Adding resource category</h2>
-  <label for="catigory">New resource category:</label> 
-  <input type="text" placeholder="video" name="catigory">
-  <input type="submit"></br>
+    <h2>Adding a resource catigory</h2>
+  <label for="catigory">resource catigory</label>
+  <input type="text" name="catigory"></br></br>
+  <input type="submit">
 </form>
+
 <form action="/rt_delete">
-  <h2>deleting resource category</h2>
+  <h2>deleting resource catigory </h2>
   
-  <label for="id">please enter <b>one</b> id number of the resource you'd like to delete. </label> 
+  <label for="id">please enter <b>one</b> id number of the resource catigory you'd like to delete. </label> 
   <input type="text" placeholder="1" name="id">
   <input type="submit">
 </form>
+
+
+<form action="/rt_edit">
+  <h2>Editing a resource catigory</h2>
+  
+  <label for="id">please enter <b>one</b> id number of the resource catigory you'd like to edit. </label> 
+  <input type="text" placeholder="1" name="id"></br></br>
+  
+  <label for="catigory">new resource catigory</label>
+  <input type="text" name="catigory"></br></br>
+
+  <input type="submit">
+</form>
+</div>
+
+<div class="list">
+    <h2>Current resource types </h2>
+<!--loop through stuff -->
+</div>
+
