@@ -37,7 +37,11 @@
 
 <div class="list">
     <h2>Current assignments </h2>
-<!--loop through stuff -->
+<ul>
+  <% Assignment.all.each do |project| %>
+  <li> ID <%= project.id %> – <%= project.description %> – <%= project.git_repo %> </li>
+  <% end %>
+</ul>
 </div>
 
 </body>
