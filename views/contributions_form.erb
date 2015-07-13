@@ -3,9 +3,9 @@
 <form action="/contributions_save"> 
     <h2>Adding a contributions</h2>
   <label for="contributor_id">contributor id</label>
-  <input type="number" name="catigory"></br></br>
+  <input type="number" name="contributor_id"></br></br>
   <label for="assignment_id">assignment id</label>
-  <input type="Number" name="catigory"></br></br>
+  <input type="Number" name="assignment_id"></br></br>
   <input type="submit">
 </form>
 
@@ -23,6 +23,10 @@
 
 <div class="list">
     <h2>Current contributions</h2>
-
+<ul>
+  <% Contribution.all.each do |project| %>
+  <li> ID <%= project.contributor_id %> – <%= project.assignment_id %>  </li>
+  <% end %>
+</ul>
 </div>
 

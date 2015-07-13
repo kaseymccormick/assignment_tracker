@@ -16,7 +16,8 @@ class Contribution
     @assignment_id = options["assignment_id"].to_i
   end
 
-  def delete(contributor_id, assignment_id)
-        CONNECTION.execute("DELETE FROM assignments WHERE contributor_id = #{contributor_id} AND assignment_id = #{assignment_id}")
+  def self.deletecont(contributor_id, assignment_id)
+    CONNECTION.execute("DELETE FROM contributions WHERE contributor_id = #{contributor_id} AND assignment_id = #{assignment_id}")
 
+  end
 end

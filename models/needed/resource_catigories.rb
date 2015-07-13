@@ -1,7 +1,7 @@
 require_relative "database_class_methods.rb"
 require_relative "database_instance_methods.rb"
 
-class ResourceCatigory
+class ResourceCategory
   
   extend DatabaseClassMethods
   include DatabaseInstanceMethods
@@ -15,8 +15,8 @@ class ResourceCatigory
     @id = options["id"].to_i
     @catigory = options["catigory"]
   end
-  
+
   def self.revise(id, catigory)
-    CONNECTION.execute("UPDATE resource_catigories SET catigory = '#{catigory}'WHERE id = #{id};")
+    CONNECTION.execute("UPDATE resource_categories SET catigory = '#{catigory}'WHERE id = #{id};")
   end
 end

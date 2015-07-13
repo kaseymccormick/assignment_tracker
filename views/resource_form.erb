@@ -35,6 +35,10 @@
 
 <div class="list">
     <h2>Current resources</h2>
-<!--loop through stuff -->
+<ul>
+  <% ResourceCategory.all.each do |resource| %>
+  <li> ID <%= resource.id %> – <%= resource.catigory %></li>
+  <% end %>
+</ul>
 </div>
 

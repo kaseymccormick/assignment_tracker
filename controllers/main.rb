@@ -20,7 +20,6 @@ get "/assignment_delete" do
 end                                                      
                                                          
 get "/assignment_edit" do         
-  binding.pry                       
   Assignment.revise(params["id"], params["description"], params["git_repo"])
     erb :"main/homepage"                   
 end                                                      
@@ -28,24 +27,30 @@ end
 get "/resources/:option" do                              
   erb :"resource_form"                                   
 end                                                      
-                                                         
-                                                         
+
+# resource catigories
 get "/rc/:option" do                                     
   erb :"rc_form"                                         
 end
 
 
-get "/rc_save" do
-  #send params to database, insert new row
-  erb
+get "/rt_save" do
+  ResourceCategory.add({"catigory" => params["catigory"]})
+  erb :"rc_form"  
 end
 
-get "/rc_delete" do
-  params["id"]
-  #delete row where id 
-  erb
+get "/rt_delete" do
+  ResourceCategory.delete(params["id"])   
+  erb :"rc_form" 
 end
 
+get  "/rt_edit" do  
+  ResourceCategory.revise(params["id"], params["catigory"])
+  erb :"rc_form" 
+end
+
+# end of resource catigories
+                                                                      
 get "/contributors/:option" do
   erb :"contributors_form"
 end
@@ -56,13 +61,13 @@ end
 
 get "/contributions_save" do
   binding.pry
-  Contribution.add({"contributor_id" => params["contributor_id"], "assignment_id"=> params["asignment_id"]})
+  Contribution.add({"contributor_id" => params["contributor_id"], "assignment_id"=> params["assignment_id"]})
    erb :"contributions_form"
 end
 
-get "contributions_delete" do
-  Contribution.delete(params["contributor_id"],params["assignment_id"])              
-  
+get "/contributions_delete" do
+  Contribution.deletecont(params["contributor_id"],params["assignment_id"])              
+  erb :"contributions_form"
 end
 
 

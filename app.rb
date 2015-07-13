@@ -9,7 +9,7 @@ require_relative "database_setup.rb"
 #models
 require_relative "models/needed/assignments.rb"
 require_relative "models/needed/contributions.rb"
-require_relative "models/needed/resource_types.rb"
+require_relative "models/needed/resource_catigories.rb"
 require_relative "models/needed/resources.rb"
 require_relative "models/needed/contributors.rb"
 
