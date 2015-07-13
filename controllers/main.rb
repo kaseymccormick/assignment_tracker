@@ -31,17 +31,17 @@ get "/resources/:option" do
 end
 
 
-get "/rt/:option" do
-  erb :"rt_form"
+get "/rc/:option" do
+  erb :"rc_form"
 end
 
 
-get "/rt_save" do
+get "/rc_save" do
   #send params to database, insert new row
   erb
 end
 
-get "/rt_delete" do
+get "/rc_delete" do
   params["id"]
   #delete row where id 
   erb
