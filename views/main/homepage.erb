@@ -1,23 +1,58 @@
 <div id="intro">
-<p>you've been given this link to take a poll on you're availability for an event.</p>
+  <p>To keep track of assignments is a nasty task, below are some options for you.</p>
 </div>
-<form action="/responder/save">
- 
-  <h3>Please enter the following information</h3>
-  <label for="name">Name:</label>
-  <input type="text" placeholder="Frodo Baggins" name="name"></br></br>
-  
-  <label for="e_mail">e-mail address:</label>
-  <input type="text" placeholder="xxyz@yahoo.com" name="e_mail"></br></br>
+<div id="menu">
 
-  
-  <label for="age_id">your age range(used for age regulations of some locations)</label>
-  <select name="age_id">
-    <% Age.all.each do |ages| %>
-    <option value= "<%= ages.id %>" ><%= ages.range %> </option>
-    <% end %>
-  </select></br></br>
-  <input type="submit">
+  <div class="section" id "assignments">
+    <h2>Assignments</h2>
+    <ul>
 
-</form>
+      <li><a href="/add/assignments" >add</a></li>
+      <li><a href="/edit/assignments">edit</a> </li>
+      <li><a href="/delete/assignments">delete</a> </li>
+      <li><a href="/view/assignments">view list</a></li>
+    </ul>
+  </div>
+  <div class="section" id "rt">
+    <h2>Resource types</h2>
+    <ul>
+
+      <li><a href="/add/rt" >add</a></li>
+      <li><a href="/edit/rt">edit</a> </li>
+      <li><a href="/delete/rt">delete</a> </li>
+      <li><a href="/view/rt">view list</a></li>
+    </ul>
+  </div>
+  <div class="section" id "resources">
+    <h2>resources</h2>
+    <ul>
+
+      <li><a href="/add/resources" >add</a></li>
+      <li><a href="/edit/resources">edit</a> </li>
+      <li><a href="/delete/resources">delete</a> </li>
+      <li><a href="/view/resources">view list</a></li>
+    </ul>
+  </div>
+  <div class="section" id "contributors">
+    <h2>contributors</h2>
+    <ul>
+
+      <li><a href="/add/contributors" >add</a></li>
+      <li><a href="/edit/contributors">edit</a> </li>
+      <li><a href="/delete/contributors">delete</a> </li>
+      <li><a href="/view/contributors">view list</a></li>
+    </ul>
+  </div>
+  <div class="section" id "contributions">
+    <h2>contributions</h2>
+    <ul>
+  
+      <li><a href="/add/contributions" >add</a></li>
+      <li><a href="/edit/contributions">edit</a> </li>
+      <li><a href="/delete/contributions">delete</a> </li>
+      <li><a href="/view/contributions">view list</a></li>
+    </ul>
+  </div>
+    
+</div>
 

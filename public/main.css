@@ -1,26 +1,5 @@
-/*  typeface treatments*/
-body{
-  font-family: 'Quicksand', sans-serif;
-  color:#739996;
-}
-.screen{
-  background-color:#ccc;
-  width:100px;
-  height:100%;  
-}
-  
-form {
-  padding-left: 50px;
-}
-  
-.hide{
-  display:none;
-}
-  
-.visible{
-  display:block;
-}
-  
+
+
 .top_bar{
   position: fixed;
   top: 0px;
@@ -50,16 +29,6 @@ form {
   border-radius: 30px;
   -webkit-box-shadow: 2px 3px 12px 8px #0066d4;
   box-shadow: 1px 1px 6px .5px #739996;
-}
-
-#menu {
-  background-color: white;
-  z-index: 100;
-  position: absolute;
-  width: 75%;
-  left: 5%;
-  border: 1px solid #78D080;
-  border-radius: 10px;
 }
   
 #intro p {
@@ -100,13 +69,24 @@ footer{
   font-size:9px;
 }
 
+.section{
+  padding:20px 0px 20px;
+}
+
+.section h2{
+  
+}
+ul{
+  padding-bottom: 10px;
+}
 #menu li { 
   list-style: none;
   padding: 20px 5px;
   border: 1px solid #739996;
-  width: 90%;
+  width: 20%;
   margin-top: 11px;
   text-align: center;
+  float:left;
 }
 a{
   text-decoration:none;
@@ -168,63 +148,7 @@ a{
 .raveT{
   color:#cc3389;
 }
-#pallete{
-  
-}
-#white{
-  color:white;
-}
-#black{
-  color:black;
-}
-#text{
-  
-}
 
 
 
-@media (min-width: 640px){
-  #adminicon img{
-    display:none;
-  }
-  
-  #menu {
-    display: block;
-    background-color: none;
-    border: none;
-    background-color: transparent;
-  }
-  
-  #menu li {
-    float:left;
-    width: 25%;
-    padding: 0px 0px;
-    border: none;
-    color: white;
-  }
-  
-  a{
-    color:white;
-  }
-  
-  ul {
-    float: right;
-    position: relative;
-    right: -135px;
-    font-size: 14px;
-    top: -22px;
-    width: 65%;
-  }
-  #menu li:hover{
-    text-decoration:underline;
-    border: none;
-  }
-  #intro {
-    width: 80%;
-    text-align: center;
-    margin-left: 42px;
 
-  }
-  }
-
-}
