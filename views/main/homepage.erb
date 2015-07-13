@@ -1,0 +1,23 @@
+<div id="intro">
+<p>you've been given this link to take a poll on you're availability for an event.</p>
+</div>
+<form action="/responder/save">
+ 
+  <h3>Please enter the following information</h3>
+  <label for="name">Name:</label>
+  <input type="text" placeholder="Frodo Baggins" name="name"></br></br>
+  
+  <label for="e_mail">e-mail address:</label>
+  <input type="text" placeholder="xxyz@yahoo.com" name="e_mail"></br></br>
+
+  
+  <label for="age_id">your age range(used for age regulations of some locations)</label>
+  <select name="age_id">
+    <% Age.all.each do |ages| %>
+    <option value= "<%= ages.id %>" ><%= ages.range %> </option>
+    <% end %>
+  </select></br></br>
+  <input type="submit">
+
+</form>
+

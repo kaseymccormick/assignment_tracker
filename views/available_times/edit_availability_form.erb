@@ -1,0 +1,47 @@
+<h2>Hi <%= Responder.find(@user.id).name %> </h2>
+
+<p>We already have you as responded.You're welcome to edit the following: </p>
+
+<b>Email on file</b>
+
+<form action ="/responder/e_mail_save">
+  <label for="e_mail">e-mail on file is:</label>
+  <input type="text" placeholder="bleh@aol.com" name="e_mail" value="<%= params["e_mail"] %>"</br>
+    
+  <input type="hidden" name="id" value="<%= @user.id %>">
+  
+  <input type="submit" value="update">  
+</form>
+    
+<b>Availability on file</b>
+
+<table>
+  <tr style="font-weight:bold;">
+    <td>Day</td>
+    <td>time slot <td> 
+     
+    </tr>
+       
+    <% @user_availability.each do |slot| %>
+
+    <tr>
+      <td> <%= Day.find(slot.days_id).date %></td>
+      <td> <%= TimeFrame.find(slot.timeframes_id).slot %></td>
+         
+    </tr>
+    <% end %>
+      
+  </table>
+    
+</br>
+<form action="demo_form.asp"  style="display:inline;">
+  <button type="submit" formaction="delete_availability" >Create New Availability</button>
+  <input type="hidden" name="responders_id" value="<%= @user.id %>">
+          
+</form>
+<em>deletes the current availability and allow you to create a new one</em>
+      
+      
+</br>
+</br>
+<a href="/home">Home</a>
