@@ -1,5 +1,7 @@
 
-
+html{
+  font-family:arial;
+}
 .top_bar{
   position: fixed;
   top: 0px;
@@ -52,9 +54,12 @@ h1 span{
 h1 em{
   font-style:normal;
   font-weight:400;
-  color:;
+  color:white;
 }
  
+form h1{
+  color:#739996;;
+} 
 h2{
   
 }
@@ -148,7 +153,8 @@ a{
 .raveT{
   color:#cc3389;
 }
+form{
+position: relative;
+margin-top: 120px;
 
-
-
-
+}
