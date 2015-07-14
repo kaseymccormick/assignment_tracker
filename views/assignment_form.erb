@@ -39,7 +39,7 @@
     <h2>Current assignments </h2>
 <ul>
   <% Assignment.all.each do |project| %>
-  <li> ID <%= project.id %> – <%= project.description %> – <%= project.git_repo %> </li>
+  <li> ID <%= project.id %> – <%= project.description %> – <%= project.git_repo %> <a href="/resources/add">add resource</a></li>
   <% end %>
 </ul>
 </div>

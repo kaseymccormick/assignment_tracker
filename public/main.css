@@ -27,7 +27,7 @@ html{
   width: 80%;
   text-align: center;
   margin-left: 42px;
-  border: 1px solid #78D080;
+  border: 1px solid #739996;
   border-radius: 30px;
   -webkit-box-shadow: 2px 3px 12px 8px #0066d4;
   box-shadow: 1px 1px 6px .5px #739996;
@@ -35,7 +35,7 @@ html{
   
 #intro p {
   margin-top: 70px;
-  color:#78D080;
+  color:#739996;
   padding-left: 8px;
   padding-right: 8px;
 }
@@ -63,11 +63,8 @@ form h1{
 .forms{
   width:50%;
 }
-
-footer{
-  /*    background-color:#ccc;*/
-  color:white;
-  font-size:9px;
+h2{
+  color:#739996;
 }
 
 .section{
@@ -82,24 +79,25 @@ ul{
 }
 #menu li { 
   list-style: none;
-  padding: 20px 5px;
+  padding: 10px 5px;
   border: 1px solid #739996;
   width: 20%;
-  margin-top: 11px;
+  margin-top: 0px;
   text-align: center;
-  float:left;
+  float: left;
 }
 a{
   text-decoration:none;
   color:#739996;    
 }
-#pallete {
-  padding-top: 80px;
-}
+
   
 #menu li:hover{
-  border: 3px solid #739996;
+  border: 3px solid #cc3389;
+   color:#78D080;
 }
+
+
 
 /*---color pallete stuff--*/
 #pallete p {
@@ -149,6 +147,10 @@ a{
 .raveT{
   color:#cc3389;
 }
+.placeholder{
+margin-top:120px;  
+}
+
 .forms{
 position: relative;
 margin-top: 120px;
@@ -157,7 +159,17 @@ float:left;
 }
 
 .list {
-  width: 50%;
+  width: 48%;
   float: right;
   margin-top: 120px;
+  padding-left: 10px;
+      border-left: solid 1px #B0C9C7;
+}
+
+.leftborder{
+    border-left: solid 1px #B0C9C7;
+}
+
+.list a{
+  font-size:10px;
 }

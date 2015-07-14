@@ -1,11 +1,21 @@
 
 <div class="forms">
 <form action="/resource_save"> 
-    <h2>Adding a resource</h2>
-  <label for="rd_id">resource catigory id</label>
-  <input type="Number" name="rd_id"></br></br>
-  <label for="assignment_id">assignment id</label>
-  <input type="Number" name="assignment_id"></br></br>
+    <h2>Adding a resource</h2>  
+  <label for="rd_id">Resource catigory id</label>
+  <select name="rd_id">
+    <% ResourceCategory.all.each do |variety| %>
+    <option value= "<%= variety.id %>" ><%= variety.catigory %> </option>
+    <% end %>
+  </select></br></br>
+  
+  <label for="assignment_id">Assignment</label>
+  <select name="assignment_id">
+    <% Assignment.all.each do |task| %>
+    <option value= "<%= task.id %>" ><%= task.description %> </option>
+    <% end %>
+  </select></br></br>
+
   <input type="submit">
 </form>
 

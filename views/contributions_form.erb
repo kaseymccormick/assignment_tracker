@@ -3,9 +3,18 @@
 <form action="/contributions_save"> 
     <h2>Adding a contributions</h2>
   <label for="contributor_id">contributor id</label>
-  <input type="number" name="contributor_id"></br></br>
-  <label for="assignment_id">assignment id</label>
-  <input type="Number" name="assignment_id"></br></br>
+  <select name="contributor_id">
+    <% Contributor.all.each do |person| %>
+    <option value= "<%= person.id %>" ><%= person.name %> </option>
+    <% end %>
+  </select></br></br>
+  
+  <label for="assignment_id">Assignment</label>
+  <select name="assignment_id">
+    <% Assignment.all.each do |task| %>
+    <option value= "<%= task.id %>" ><%= task.description %> </option>
+    <% end %>
+  </select></br></br>
   <input type="submit">
 </form>
 
@@ -25,7 +34,7 @@
     <h2>Current contributions</h2>
 <ul>
   <% Contribution.all.each do |project| %>
-  <li> ID <%= project.contributor_id %> – <%= project.assignment_id %>  </li>
+  <li> ID <%= project.contributor_id %> – <%= project.assignment_id %> </li>
   <% end %>
 </ul>
 </div>
