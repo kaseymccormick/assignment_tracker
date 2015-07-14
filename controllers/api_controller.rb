@@ -68,9 +68,14 @@ end
 
 get "/api/all_partners" do
   contributors = Contributor.all
-  all_contributors = contributors.make_hash
   
-  json all_contributors
+  @emptarr = []
+  
+  contributors.each do |person|
+    @emptarr << person.make_hash
+  end
+  
+  json @emptarr
 end
 
 #Not working and not sure why
