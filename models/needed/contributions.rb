@@ -20,4 +20,10 @@ class Contribution
     CONNECTION.execute("DELETE FROM contributions WHERE contributor_id = #{contributor_id} AND assignment_id = #{assignment_id}")
 
   end
+  
+  def self.all_from_contributions(id)
+      hash_list = CONNECTION.execute("SELECT * FROM contributions WHERE assignment_id = #{id};")
+      return hash_list
+    end
+    
 end

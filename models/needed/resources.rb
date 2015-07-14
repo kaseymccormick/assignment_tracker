@@ -19,4 +19,10 @@ class Resource
   def self.revise(id, rd_id, assignment_id)
     CONNECTION.execute("UPDATE resources SET rd_id = '#{rd_id}', assignment_id = '#{assignment_id}' WHERE id = #{id};")
   end
+  
+  def self.all_from_assignment(id)
+    hash_list = CONNECTION.execute("SELECT * FROM resources WHERE assignment_id = #{id};")
+    return hash_list
+  end
+  
 end

@@ -3,6 +3,7 @@ require "sinatra"
 require "sinatra/reloader"
 require "sinatra/base"
 require "sinatra/json"
+set :bind, '0.0.0.0'
 
 #sql/ database
 require "sqlite3"
@@ -17,4 +18,4 @@ require_relative "models/needed/contributors.rb"
 
 #controllers
 require_relative "controllers/main.rb"
-require_relative "controllers/api_controler.rb"
+require_relative "controllers/api_controller.rb"

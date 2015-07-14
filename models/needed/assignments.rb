@@ -20,4 +20,6 @@ class Assignment
   def self.revise(id, description, git_repo)
     CONNECTION.execute("UPDATE assignments SET description = '#{description}', git_repo = '#{git_repo}' WHERE id = #{id};")
   end
+  
+
 end

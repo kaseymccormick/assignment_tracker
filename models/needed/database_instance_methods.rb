@@ -21,4 +21,21 @@ module DatabaseInstanceMethods
     # Return only the value for the key of the field we're seeking.
     result[field]
   end
+
+
+# Makes a hash of the Class's attributes that calls the method.
+#
+# Accepts no arguments
+# 
+# Returns a Hash of the instance variable names
+def make_hash
+  variables = self.instance_variables
+  attr_hash = {}
+  
+  variables.each do |var|
+    attr_hash["#{var.slice(1..-1)}"] = self.send("#{var.slice(1..-1)}")
+  end
+  
+  attr_hash
+end
 end
