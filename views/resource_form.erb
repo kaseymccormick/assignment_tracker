@@ -1,17 +1,15 @@
 
 <div class="forms">
-<form action="/rt_save"> 
+<form action="/resource_save"> 
     <h2>Adding a resource</h2>
-  <label for="catigory">resource link</label>
-  <input type="text" name="catigory"></br></br>
-  <label for="catigory">resource catigory id</label>
-  <input type="Number" name="catigory"></br></br>
-  <label for="catigory">assignment id</label>
-  <input type="Number" name="catigory"></br></br>
+  <label for="rd_id">resource catigory id</label>
+  <input type="Number" name="rd_id"></br></br>
+  <label for="assignment_id">assignment id</label>
+  <input type="Number" name="assignment_id"></br></br>
   <input type="submit">
 </form>
 
-<form action="/rt_delete">
+<form action="/resource_delete">
   <h2>deleting resource </h2>
   
   <label for="id">please enter <b>one</b> id number of the resource catigory you'd like to delete. </label> 
@@ -20,7 +18,7 @@
 </form>
 
 
-<form action="/rt_edit">
+<form action="/resource_edit">
   <h2>Editing a resource</h2>
   
   <label for="id">please enter <b>one</b> id number of the resource catigory you'd like to edit. </label> 
@@ -35,10 +33,11 @@
 
 <div class="list">
     <h2>Current resources</h2>
-<ul>
-  <% ResourceCategory.all.each do |resource| %>
-  <li> ID <%= resource.id %> – <%= resource.catigory %></li>
-  <% end %>
-</ul>
+    <ul>
+      <% Resource.all.each do |project| %>
+      <li> ID <%= project.id %> – <%= project.rd_id %> – <%= project.assignment_id %> </li>
+      <% end %>
+    </ul>
+
 </div>
 
