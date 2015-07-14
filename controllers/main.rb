@@ -4,7 +4,7 @@
 get "/home" do
   erb :"main/homepage"
 end      
-get "view/all"     do
+get "/view/all"     do
   erb :"allthings"
 end
                                            
