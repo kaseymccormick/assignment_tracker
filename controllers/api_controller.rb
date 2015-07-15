@@ -65,74 +65,106 @@ get "/api/resources" do
   json @resource_array
 end
 
+# find all assignments that contributor id has contributed to
+get "/api/all_contributions/:id" do
+    contrib = Contribution.assignments_with_contributor(params["id"])
+  
+    contrib_data = []
 
-get "/api/all_partners" do
-  contributors = Contributor.all
   
-  @emptarr = []
+    contrib.each do |c|
+      object = Contribution.new(c)
+      contrib_data << object
+    end
   
-  contributors.each do |person|
-    @emptarr << person.make_hash
+    @data_array = [] 
+
+    contrib_data.each do |data|
+      @data_array << data.make_hash
+    end
+    
+    json @data_array
   end
   
-  json @emptarr
-end
-
-#Not working and not sure why
-get "/api/partner_assign" do
-  search_partner = Partner.find_rows("partner", params["id"]) 
-  assign_id = search_partner["assignment_id".to_i]
-  find_assign = Assignment.find_rows_hash("id", assign_id)
+get "/api/add_assign/:description/:git_repo" do
+  @new_entry = Assignment.add({ "description" => params["description"], "git_repo" => params["git_repo"]})
   
-  json find_assign
-end
-
-
-get "/api/add_assign" do
-  @new_entry = Assignment.add({"name" => params["name"], "description" => params["description"], "github" => params["github"]})
-  
-  hash = {"name" => params["name"], "description" => params["description"], "github" => params["github"]}
+  hash = {"description" => params["description"], "git_repo" => params["git_repo"]}
 
   json hash
 end
 
-#Getting errors for changing link and partner
-get "/api/change_link" do
-  @entry = Link.find_rows("assignment_id", params["id"])
-  @entry.article_or_video =  params["article_or_video"]
-  @entry.save
+#add resource type of an assignment 
+get "/api/add_resource/:assignment_id/:rd_id" do
+  #in resources table find
+  entry = Resource.add({ "assignment_id" => params["assignment_id"], "rd_id" => params["rd_id"]} )
+  @entry = entry.make_hash
+  json @entry
+end
+
+#Add a contributor to an existing assignment
+get "/api/add_contributor/:assignment_id/:contributor_id" do
+  entry = Contribution.add({"assignment_id" => params["assignment_id"], "contributor_id" => params["contributor_id"]})
+  @entry = entry.make_hash
 
   json @entry
 end
 
-get "/api/change_partner" do
-  @entry = Partner.find_rows("assignment_id", params["id"])
-  @entry.partner = params["partner"]
-  @entry.save
+
+# --------------------DELETIONS BELOW< bewARE
+
+#deletes assignment returns assignments left... not sure what to return
+get "/api/delete_assign/:id" do
+  @delete_assignment = Assignment.find(params["id"].to_i) 
   
-  json @entry
+  Assignment.delete(params["id"].to_i) 
+  
+@deleted_a = @delete_assignment.make_hash
+
+  json @deleted_a
+end
+CONNECTION.execute("CREATE TABLE IF NOT EXISTS resources (id INTEGER PRIMARY KEY, rd_id INTEGER, assignment_id INTEGER);")
+
+# works but returns empty array :(
+get "/api/delete_resource/:rd_id/:assignment_id" do
+  @delete_resource = Resource.findcont(params["rd_id"], params["assignment_id"])
+
+  Resource.self.deletecont(params["rd_id"], params["assignment_id"])
+
+  @deleted_r = @delete_resource.make_hash
+  
+  json @deleted_r
 end
 
 
-#Delete routes return objects not json, but do work
-get "/api/delete_assign" do
-  a = Assignment.find(params["id"].to_i) 
-  a.delete
+# --------------------BOTH DELTE BOTH DONT RETURN THE THING NEEDED 
+# get "/api/delete_contribution/:contributor_id/:assignment_id" do
+#
+#   @delete_contribution = Contribution.findcont(params["contributor_id"], params["assignment_id"])
+#
+#   Contribution.deletecont(params["contributor_id"].to_i, params["assignment_id"])
+#
+#   @deleted_contribution = @delete_contribution.make_hash
+#
+#       json @deleted_contribution
+#
+# end
+
+# --------------------BOTH DELTE BOTH DONT RETURN THE THING NEEDED 
+
+get "/api/delete_contribution/:contributor_id/:assignment_id" do
+  delete_contribution = Contribution.findcont(params["contributor_id"], params["assignment_id"]) 
+
+  Contribution.deletecont(params["contributor_id"].to_i, params["assignment_id"]) 
+
   
-  json a
+  @contribution_array = []
+  binding.pry
+  delete_contribution.each do |cont|
+    @contribution_array << cont.make_hash
+  end
+  
+  json @contribution_array
 end
 
-get "/api/delete_link" do
-  l = Link.find(params["id"].to_i)
-  l.delete
-  
-  json l
-end
-
-get "/api/delete_partner" do
-  p = Partner.find(params["id"].to_i)
-  p.delete
-  
-  json p
-end
 

@@ -24,5 +24,11 @@ class Resource
     hash_list = CONNECTION.execute("SELECT * FROM resources WHERE assignment_id = #{id};")
     return hash_list
   end
-  
+  def self.deletecont(rd_id, assignment_id)
+    CONNECTION.execute("DELETE FROM resources WHERE rd_id = #{rd_id} AND assignment_id = #{assignment_id}")
+
+  end
+  def self.findcont(rd_id, assignment_id)
+    CONNECTION.execute("SELECT * FROM resources WHERE rd_id = #{rd_id} AND assignment_id = #{assignment_id}")
+  end
 end
