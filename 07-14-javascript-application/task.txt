@@ -1,0 +1,11 @@
+Build a user-facing application for your data service API. It should look/behave a lot like a traditional application, but it will in fact be using AJAX to perform most actions.
+
+This entire application will only need HTML, CSS, and JavaScript. There is no Ruby component at all.
+
+Your homepage should show all assignments. Use an AJAX request to your [running] Sinatra server to get JSON containing assignment info, and write the content to the DOM in a sensible way.
+
+(You'll need to allow access from other domains to allow this: https://github.com/britg/sinatra-cross_origin)
+
+When you click on one of the assignments on the homepage, use AJAX to get that assignment's info from the data service and load it into the DOM.
+
+Continue to build out AJAX interactions for 3 additional actions supported by the API.
